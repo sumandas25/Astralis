@@ -44,7 +44,7 @@ Create a local environment file:
 cp .env.example .env
 ```
 
-Fill in the Supabase values in `.env`. The `LOVABLE_API_KEY` value is optional unless you want the Research AI endpoint to work locally.
+Fill in the Supabase values in `.env`. To use the Research AI endpoint locally, add one server-side AI provider key such as `OPENAI_API_KEY` or `GEMINI_API_KEY`.
 
 ### Development
 
@@ -93,9 +93,40 @@ npm run format
 | `SUPABASE_URL` | Yes | Server-side Supabase project URL. |
 | `SUPABASE_PUBLISHABLE_KEY` | Yes | Server-side Supabase publishable/anon key. |
 | `SUPABASE_SERVICE_ROLE_KEY` | Optional locally, required for privileged server flows | Supabase service role key. Keep this secret. |
-| `LOVABLE_API_KEY` | Optional | Enables the Research AI chat endpoint. Keep this secret. |
+| `AI_PROVIDER` | Optional | Selects `openai`, `gemini`, `lovable`, or `custom`. If omitted, Astralis picks the first configured provider. |
+| `OPENAI_API_KEY` | Optional | Enables Research AI through OpenAI. Keep this secret. |
+| `OPENAI_MODEL` | Optional | OpenAI model name. Defaults to `gpt-4o-mini`. |
+| `GEMINI_API_KEY` | Optional | Enables Research AI through Gemini's OpenAI-compatible endpoint. Keep this secret. |
+| `GEMINI_MODEL` | Optional | Gemini model name. Defaults to `gemini-2.5-flash`. |
+| `LOVABLE_API_KEY` | Optional | Enables Research AI through Lovable AI Gateway. Keep this secret. |
+| `LOVABLE_MODEL` | Optional | Lovable gateway model. Defaults to `google/gemini-3-flash-preview`. |
+| `AI_API_KEY` | Optional | API key for any OpenAI-compatible provider. Requires `AI_BASE_URL`. Keep this secret. |
+| `AI_BASE_URL` | Optional | Base URL for a custom OpenAI-compatible provider. |
+| `AI_MODEL` | Optional | Model for the custom OpenAI-compatible provider. Defaults to `gpt-4o-mini`. |
 
 Never commit `.env`, service role keys, API keys, or other secrets.
+
+### Research AI Provider Setup
+
+Research AI runs through the server route at `/api/chat`, so provider keys stay on the server and are never exposed to the browser. For local development, each contributor should copy `.env.example` to `.env` and add their own key for one provider.
+
+Minimal OpenAI setup:
+
+```bash
+AI_PROVIDER=openai
+OPENAI_API_KEY=your-openai-api-key
+OPENAI_MODEL=gpt-4o-mini
+```
+
+Minimal Gemini setup:
+
+```bash
+AI_PROVIDER=gemini
+GEMINI_API_KEY=your-gemini-api-key
+GEMINI_MODEL=gemini-2.5-flash
+```
+
+For production hosting, add these as encrypted environment variables or secrets in your hosting dashboard.
 
 ## Project Structure
 

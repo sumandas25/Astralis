@@ -165,7 +165,7 @@ export const missions: Mission[] = [
       "First spacecraft to 'touch' the Sun (2021)",
     ],
     image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Parker_Solar_Probe_-_Solar_Array_Cooling_System_Testing_%2826033922387%29.jpg/1024px-Parker_Solar_Probe_-_Solar_Array_Cooling_System_Testing_%2826033922387%29.jpg",
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Thermal_testing_of_the_solar_array_cooling_system_for_the_Parker_Solar_Probe.jpg",
   },
   {
     id: "aditya-l1",
@@ -184,7 +184,7 @@ export const missions: Mission[] = [
       "Captured first images of a major solar flare",
     ],
     image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/PSLV-C57_Aditya-L1_Mission_lift_off_03.jpg/1024px-PSLV-C57_Aditya-L1_Mission_lift_off_03.jpg",
+      "https://commons.wikimedia.org/wiki/Special:FilePath/PSLV-XL_(C57)_Aditya-L1_ISRO.jpg",
   },
   {
     id: "chang-e-6",
@@ -260,7 +260,7 @@ export const missions: Mission[] = [
       "Will make India the 4th nation with independent human spaceflight",
     ],
     image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Crew_Module_of_Gaganyaan.jpg/1024px-Crew_Module_of_Gaganyaan.jpg",
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Gaganyaan_crew_unofficial_portrait.jpg",
   },
   {
     id: "tiangong",
@@ -279,7 +279,7 @@ export const missions: Mission[] = [
       "Hosts the Chinese Space Station Telescope (Xuntian) — coming 2026",
     ],
     image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Tiangong_space_station_-_Shenzhou_16_post-departure_view_%28cropped%29.png/1024px-Tiangong_space_station_-_Shenzhou_16_post-departure_view_%28cropped%29.png",
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Chinese_Tiangong_Space_Station.jpg",
   },
   {
     id: "mars-sample-return",
@@ -298,7 +298,7 @@ export const missions: Mission[] = [
       "Samples arrive on Earth in 2030s",
     ],
     image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Mars_Sample_Return_-_lander_artist_concept.jpg/1024px-Mars_Sample_Return_-_lander_artist_concept.jpg",
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Mars_Sample_Return_Concept_Illustration.jpg",
   },
   {
     id: "dragonfly",
@@ -317,7 +317,7 @@ export const missions: Mission[] = [
       "Arrives at Titan in 2034",
     ],
     image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Dragonfly_on_Titan_%28Artist%27s_Impression%29.png/1024px-Dragonfly_on_Titan_%28Artist%27s_Impression%29.png",
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Dragonfly-landing.png",
   },
 ];
 
