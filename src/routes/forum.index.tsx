@@ -123,7 +123,9 @@ function ForumIndex() {
       )}
 
       <div className="mb-5 flex flex-wrap gap-1.5">
-        <Chip active={filter === "all"} onClick={() => setFilter("all")}>All</Chip>
+        <Chip active={filter === "all"} onClick={() => setFilter("all")}>
+          All
+        </Chip>
         {FORUM_CATEGORIES.map((c) => (
           <Chip key={c.id} active={filter === c.id} onClick={() => setFilter(c.id)}>
             {c.label}
@@ -205,7 +207,10 @@ function NewTopicForm({ onCreate }: { onCreate: (id: string) => void }) {
   }
 
   return (
-    <form onSubmit={submit} className="mb-8 grid gap-3 rounded-2xl border border-accent/30 bg-card/70 p-5">
+    <form
+      onSubmit={submit}
+      className="mb-8 grid gap-3 rounded-2xl border border-accent/30 bg-card/70 p-5"
+    >
       <div className="grid gap-3 sm:grid-cols-[1fr_180px]">
         <input
           value={title}
@@ -221,7 +226,9 @@ function NewTopicForm({ onCreate }: { onCreate: (id: string) => void }) {
           className="rounded-xl border border-border bg-background/60 px-4 py-2.5 text-sm outline-none focus:border-accent/70"
         >
           {FORUM_CATEGORIES.map((c) => (
-            <option key={c.id} value={c.id}>{c.label}</option>
+            <option key={c.id} value={c.id}>
+              {c.label}
+            </option>
           ))}
         </select>
       </div>
@@ -245,7 +252,15 @@ function NewTopicForm({ onCreate }: { onCreate: (id: string) => void }) {
   );
 }
 
-function Chip({ children, active, onClick }: { children: React.ReactNode; active: boolean; onClick: () => void }) {
+function Chip({
+  children,
+  active,
+  onClick,
+}: {
+  children: React.ReactNode;
+  active: boolean;
+  onClick: () => void;
+}) {
   return (
     <button
       onClick={onClick}

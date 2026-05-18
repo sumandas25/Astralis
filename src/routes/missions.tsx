@@ -1,6 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
-import { missions, statusColor, statusLabel, type MissionStatus, type Mission } from "@/data/missions";
+import {
+  missions,
+  statusColor,
+  statusLabel,
+  type MissionStatus,
+  type Mission,
+} from "@/data/missions";
 import { ArrowLeft, Calendar, Target, Radio, ExternalLink, BookOpen } from "lucide-react";
 import { SafeImage } from "@/components/SafeImage";
 import { wikipediaUrl, buildResearchLinks } from "@/lib/research-links";
@@ -9,14 +15,18 @@ export const Route = createFileRoute("/missions")({
   head: () => ({
     meta: [
       { title: "Live Missions — Astralis" },
-      { name: "description", content: "Latest cosmic and astronomical missions from NASA, ISRO, ESA, CNSA and more." },
+      {
+        name: "description",
+        content: "Latest cosmic and astronomical missions from NASA, ISRO, ESA, CNSA and more.",
+      },
       { property: "og:title", content: "Live Missions — Astralis" },
-      { property: "og:description", content: "Track the missions reshaping our understanding of the cosmos." },
+      {
+        property: "og:description",
+        content: "Track the missions reshaping our understanding of the cosmos.",
+      },
       { property: "og:url", content: "https://stardust-atlas-explorer.lovable.app/missions" },
     ],
-    links: [
-      { rel: "canonical", href: "https://stardust-atlas-explorer.lovable.app/missions" },
-    ],
+    links: [{ rel: "canonical", href: "https://stardust-atlas-explorer.lovable.app/missions" }],
   }),
   component: MissionsPage,
 });
@@ -145,10 +155,7 @@ function MissionsPage() {
             <section key={s} aria-labelledby={`section-${s}`}>
               <div className="mb-5 flex flex-wrap items-end justify-between gap-2 border-b border-border/60 pb-3">
                 <div className="flex items-center gap-3">
-                  <span
-                    className="relative flex h-2.5 w-2.5"
-                    aria-hidden
-                  >
+                  <span className="relative flex h-2.5 w-2.5" aria-hidden>
                     {s === "active" && (
                       <span
                         className="absolute inline-flex h-full w-full animate-ping rounded-full opacity-75"
@@ -160,7 +167,10 @@ function MissionsPage() {
                       style={{ backgroundColor: statusColor[s] }}
                     />
                   </span>
-                  <h2 id={`section-${s}`} className="font-display text-xl font-semibold sm:text-2xl">
+                  <h2
+                    id={`section-${s}`}
+                    className="font-display text-xl font-semibold sm:text-2xl"
+                  >
                     {statusLabel[s]}
                     <span className="ml-2 text-sm font-normal text-muted-foreground">
                       ({list.length})
@@ -209,7 +219,10 @@ function MissionCard({ mission: m }: { mission: Mission }) {
         />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-card via-card/30 to-transparent" />
         <div className="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full bg-background/70 px-2.5 py-1 text-[10px] uppercase tracking-[0.15em] backdrop-blur">
-          <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: statusColor[m.status] }} />
+          <span
+            className="h-1.5 w-1.5 rounded-full"
+            style={{ backgroundColor: statusColor[m.status] }}
+          />
           {statusLabel[m.status]}
         </div>
         <div className="absolute right-3 top-3 rounded-full bg-background/70 px-2.5 py-1 text-xs backdrop-blur">
@@ -270,4 +283,3 @@ function MissionCard({ mission: m }: { mission: Mission }) {
     </article>
   );
 }
-

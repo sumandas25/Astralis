@@ -1,6 +1,16 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { bodies, categories, getBody } from "@/data/cosmos";
-import { ArrowLeft, ArrowUpRight, BookOpen, Compass, ExternalLink, Microscope, Rocket, Sparkles, Tag } from "lucide-react";
+import {
+  ArrowLeft,
+  ArrowUpRight,
+  BookOpen,
+  Compass,
+  ExternalLink,
+  Microscope,
+  Rocket,
+  Sparkles,
+  Tag,
+} from "lucide-react";
 import { SafeImage } from "@/components/SafeImage";
 import { buildResearchLinks } from "@/lib/research-links";
 
@@ -34,16 +44,16 @@ export const Route = createFileRoute("/body/$id")({
         ...(b?.image ? [{ property: "og:image", content: b.image }] : []),
       ],
       links: [{ rel: "canonical", href: url }],
-      scripts: jsonLd
-        ? [{ type: "application/ld+json", children: JSON.stringify(jsonLd) }]
-        : [],
+      scripts: jsonLd ? [{ type: "application/ld+json", children: JSON.stringify(jsonLd) }] : [],
     };
   },
   component: BodyPage,
   notFoundComponent: () => (
     <div className="mx-auto max-w-3xl px-4 py-24 text-center">
       <h1 className="font-display text-3xl">Body not found</h1>
-      <Link to="/" className="mt-6 inline-block text-accent underline">Back to home</Link>
+      <Link to="/" className="mt-6 inline-block text-accent underline">
+        Back to home
+      </Link>
     </div>
   ),
 });
@@ -54,7 +64,9 @@ function BodyPage() {
   const cat = categories.find((c) => c.id === body.category)!;
 
   // Related: same category, exclude self, max 3
-  const related = bodies.filter((b) => b.category === body.category && b.id !== body.id).slice(0, 3);
+  const related = bodies
+    .filter((b) => b.category === body.category && b.id !== body.id)
+    .slice(0, 3);
 
   return (
     <main className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
@@ -78,9 +90,7 @@ function BodyPage() {
               className="object-cover animate-float"
             />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
-            <span
-              className="absolute right-4 top-4 inline-flex items-center gap-2 rounded-full bg-background/60 px-3 py-1 text-[10px] uppercase tracking-[0.18em] backdrop-blur"
-            >
+            <span className="absolute right-4 top-4 inline-flex items-center gap-2 rounded-full bg-background/60 px-3 py-1 text-[10px] uppercase tracking-[0.18em] backdrop-blur">
               <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: body.color }} />
               {cat.label}
             </span>
@@ -126,7 +136,10 @@ function BodyPage() {
               key={i}
               className="relative overflow-hidden rounded-2xl border border-border/60 bg-card p-5"
             >
-              <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full opacity-20 blur-2xl" style={{ background: "var(--gradient-aurora)" }} />
+              <div
+                className="absolute -right-8 -top-8 h-24 w-24 rounded-full opacity-20 blur-2xl"
+                style={{ background: "var(--gradient-aurora)" }}
+              />
               <p className="relative text-sm leading-relaxed text-foreground/90">{f}</p>
               <div className="relative mt-3 text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
                 Fact 0{i + 1}
@@ -149,7 +162,10 @@ function BodyPage() {
               </DeepCard>
             )}
             {body.extras.composition && (
-              <DeepCard icon={<Microscope className="h-3.5 w-3.5 text-accent" />} title="Composition">
+              <DeepCard
+                icon={<Microscope className="h-3.5 w-3.5 text-accent" />}
+                title="Composition"
+              >
                 {body.extras.composition}
               </DeepCard>
             )}
@@ -169,7 +185,10 @@ function BodyPage() {
               </DeepCard>
             )}
             {body.extras.notableMissions && body.extras.notableMissions.length > 0 && (
-              <DeepCard icon={<Rocket className="h-3.5 w-3.5 text-accent" />} title="Notable missions">
+              <DeepCard
+                icon={<Rocket className="h-3.5 w-3.5 text-accent" />}
+                title="Notable missions"
+              >
                 <ul className="space-y-1">
                   {body.extras.notableMissions.map((m) => (
                     <li key={m}>• {m}</li>
@@ -209,7 +228,9 @@ function BodyPage() {
         </div>
         <p className="mt-3 text-[11px] text-muted-foreground/70">
           Tip: ask the Research AI for a curated reading list →{" "}
-          <Link to="/research" className="text-accent hover:underline">/research</Link>
+          <Link to="/research" className="text-accent hover:underline">
+            /research
+          </Link>
         </p>
       </section>
 
@@ -235,7 +256,12 @@ function BodyPage() {
                 className="group flex items-center gap-3 rounded-2xl border border-border/60 bg-card p-3 transition-all hover:-translate-y-0.5 hover:border-accent/60"
               >
                 <div className="h-16 w-16 shrink-0 overflow-hidden rounded-xl">
-                  <SafeImage src={b.image} alt={b.name} targetWidth={250} className="object-cover" />
+                  <SafeImage
+                    src={b.image}
+                    alt={b.name}
+                    targetWidth={250}
+                    className="object-cover"
+                  />
                 </div>
                 <div className="min-w-0 flex-1">
                   <div className="font-display text-sm font-semibold">{b.name}</div>

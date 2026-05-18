@@ -1,12 +1,15 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useEffect } from "react";
-import { createThreadId, loadThreads, saveThreads, type ResearchThread } from "@/lib/research-storage";
+import {
+  createThreadId,
+  loadThreads,
+  saveThreads,
+  type ResearchThread,
+} from "@/lib/research-storage";
 
 export const Route = createFileRoute("/research/")({
   head: () => ({
-    links: [
-      { rel: "canonical", href: "https://stardust-atlas-explorer.lovable.app/research" },
-    ],
+    links: [{ rel: "canonical", href: "https://stardust-atlas-explorer.lovable.app/research" }],
   }),
   component: ResearchIndex,
 });
@@ -20,7 +23,12 @@ function ResearchIndex() {
       return;
     }
     const id = createThreadId();
-    const t: ResearchThread = { id, title: "New conversation", updatedAt: Date.now(), messages: [] };
+    const t: ResearchThread = {
+      id,
+      title: "New conversation",
+      updatedAt: Date.now(),
+      messages: [],
+    };
     saveThreads([t]);
     navigate({ to: "/research/$threadId", params: { threadId: id }, replace: true });
   }, [navigate]);

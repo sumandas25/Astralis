@@ -10,7 +10,8 @@
     font-style: normal;
     font-weight: 100 900;
     font-display: swap;
-    src: url("https://fonts.gstatic.com/s/sora/v12/xMQOuFFYT72X5wkB_18qmnndmSdSnk-DKQJRBg.woff2") format("woff2");
+    src: url("https://fonts.gstatic.com/s/sora/v12/xMQOuFFYT72X5wkB_18qmnndmSdSnk-DKQJRBg.woff2")
+      format("woff2");
   }
   @font-face {
     font-family: "Manrope";
@@ -71,7 +72,7 @@
   --popover: oklch(0.13 0.06 275);
   --popover-foreground: oklch(0.96 0.01 270);
 
-  --primary: oklch(0.62 0.22 285);          /* indigo #4f46e5 */
+  --primary: oklch(0.62 0.22 285); /* indigo #4f46e5 */
   --primary-foreground: oklch(0.98 0.005 270);
 
   --secondary: oklch(0.18 0.05 280);
@@ -80,7 +81,7 @@
   --muted: oklch(0.17 0.04 280);
   --muted-foreground: oklch(0.72 0.04 280);
 
-  --accent: oklch(0.78 0.14 295);            /* violet #a78bfa */
+  --accent: oklch(0.78 0.14 295); /* violet #a78bfa */
   --accent-foreground: oklch(0.1 0.04 280);
 
   --destructive: oklch(0.65 0.22 25);
@@ -93,7 +94,12 @@
   --glow: oklch(0.78 0.14 295 / 0.45);
   --stardust: oklch(0.96 0.01 270 / 0.7);
 
-  --gradient-cosmic: radial-gradient(ellipse at top, oklch(0.2 0.1 285) 0%, oklch(0.08 0.04 280) 50%, oklch(0.05 0.03 280) 100%);
+  --gradient-cosmic: radial-gradient(
+    ellipse at top,
+    oklch(0.2 0.1 285) 0%,
+    oklch(0.08 0.04 280) 50%,
+    oklch(0.05 0.03 280) 100%
+  );
   --gradient-aurora: linear-gradient(135deg, oklch(0.62 0.22 285) 0%, oklch(0.78 0.14 295) 100%);
 }
 
@@ -107,14 +113,20 @@
     border-color: var(--color-border);
   }
 
-  html, body {
+  html,
+  body {
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-display);
     letter-spacing: -0.02em;
   }
@@ -150,15 +162,24 @@
     background-repeat: repeat;
   }
   @keyframes float-slow {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-12px); }
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-12px);
+    }
   }
   .animate-float {
     animation: float-slow 6s ease-in-out infinite;
   }
   @keyframes spin-slow {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
   }
   .animate-spin-slow {
     animation: spin-slow 60s linear infinite;

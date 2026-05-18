@@ -21,7 +21,8 @@ Astralis is an interactive astronomy encyclopedia and cosmic atlas. It brings to
 - TanStack Router and TanStack Start
 - Tailwind CSS
 - Supabase
-- Cloudflare/Vite tooling
+- Nitro/Vercel deployment support
+- Lovable/Cloudflare Vite tooling
 - Radix UI and shadcn-style components
 
 ## Getting Started
@@ -76,6 +77,28 @@ set NODE_OPTIONS=--max-old-space-size=4096&& npm.cmd run build
 npm run preview
 ```
 
+## Deployment
+
+Astralis is ready for Vercel. Vercel automatically sets `VERCEL=1`, and the Vite config switches to Nitro's Vercel output while keeping the existing Lovable/Cloudflare build path for local and non-Vercel builds.
+
+Recommended Vercel project settings:
+
+| Setting          | Value                        |
+| ---------------- | ---------------------------- |
+| Framework preset | Other, or Vercel auto-detect |
+| Install command  | `npm ci`                     |
+| Build command    | `npm run build`              |
+| Output directory | Leave blank                  |
+| Node.js version  | 22.x                         |
+
+Add the same environment variables listed below in Vercel Project Settings -> Environment Variables. For Research AI, choose one provider, for example `AI_PROVIDER=gemini` with `GEMINI_API_KEY`, or `AI_PROVIDER=openai` with `OPENAI_API_KEY`. Keep `SUPABASE_SERVICE_ROLE_KEY` and AI keys as server-side secrets only.
+
+To test the Vercel build locally on Windows:
+
+```cmd
+set VERCEL=1&& set NODE_OPTIONS=--max-old-space-size=4096&& npm.cmd run build
+```
+
 ### Lint and Format
 
 ```bash
@@ -85,24 +108,24 @@ npm run format
 
 ## Environment Variables
 
-| Name | Required | Purpose |
-| --- | --- | --- |
-| `VITE_SUPABASE_PROJECT_ID` | Yes | Supabase project identifier used by client tooling. |
-| `VITE_SUPABASE_URL` | Yes | Browser-safe Supabase project URL. |
-| `VITE_SUPABASE_PUBLISHABLE_KEY` | Yes | Browser-safe Supabase publishable/anon key. |
-| `SUPABASE_URL` | Yes | Server-side Supabase project URL. |
-| `SUPABASE_PUBLISHABLE_KEY` | Yes | Server-side Supabase publishable/anon key. |
-| `SUPABASE_SERVICE_ROLE_KEY` | Optional locally, required for privileged server flows | Supabase service role key. Keep this secret. |
-| `AI_PROVIDER` | Optional | Selects `openai`, `gemini`, `lovable`, or `custom`. If omitted, Astralis picks the first configured provider. |
-| `OPENAI_API_KEY` | Optional | Enables Research AI through OpenAI. Keep this secret. |
-| `OPENAI_MODEL` | Optional | OpenAI model name. Defaults to `gpt-4o-mini`. |
-| `GEMINI_API_KEY` | Optional | Enables Research AI through Gemini's OpenAI-compatible endpoint. Keep this secret. |
-| `GEMINI_MODEL` | Optional | Gemini model name. Defaults to `gemini-2.5-flash`. |
-| `LOVABLE_API_KEY` | Optional | Enables Research AI through Lovable AI Gateway. Keep this secret. |
-| `LOVABLE_MODEL` | Optional | Lovable gateway model. Defaults to `google/gemini-3-flash-preview`. |
-| `AI_API_KEY` | Optional | API key for any OpenAI-compatible provider. Requires `AI_BASE_URL`. Keep this secret. |
-| `AI_BASE_URL` | Optional | Base URL for a custom OpenAI-compatible provider. |
-| `AI_MODEL` | Optional | Model for the custom OpenAI-compatible provider. Defaults to `gpt-4o-mini`. |
+| Name                            | Required                                               | Purpose                                                                                                       |
+| ------------------------------- | ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------- |
+| `VITE_SUPABASE_PROJECT_ID`      | Yes                                                    | Supabase project identifier used by client tooling.                                                           |
+| `VITE_SUPABASE_URL`             | Yes                                                    | Browser-safe Supabase project URL.                                                                            |
+| `VITE_SUPABASE_PUBLISHABLE_KEY` | Yes                                                    | Browser-safe Supabase publishable/anon key.                                                                   |
+| `SUPABASE_URL`                  | Yes                                                    | Server-side Supabase project URL.                                                                             |
+| `SUPABASE_PUBLISHABLE_KEY`      | Yes                                                    | Server-side Supabase publishable/anon key.                                                                    |
+| `SUPABASE_SERVICE_ROLE_KEY`     | Optional locally, required for privileged server flows | Supabase service role key. Keep this secret.                                                                  |
+| `AI_PROVIDER`                   | Optional                                               | Selects `openai`, `gemini`, `lovable`, or `custom`. If omitted, Astralis picks the first configured provider. |
+| `OPENAI_API_KEY`                | Optional                                               | Enables Research AI through OpenAI. Keep this secret.                                                         |
+| `OPENAI_MODEL`                  | Optional                                               | OpenAI model name. Defaults to `gpt-4o-mini`.                                                                 |
+| `GEMINI_API_KEY`                | Optional                                               | Enables Research AI through Gemini's OpenAI-compatible endpoint. Keep this secret.                            |
+| `GEMINI_MODEL`                  | Optional                                               | Gemini model name. Defaults to `gemini-2.5-flash`.                                                            |
+| `LOVABLE_API_KEY`               | Optional                                               | Enables Research AI through Lovable AI Gateway. Keep this secret.                                             |
+| `LOVABLE_MODEL`                 | Optional                                               | Lovable gateway model. Defaults to `google/gemini-3-flash-preview`.                                           |
+| `AI_API_KEY`                    | Optional                                               | API key for any OpenAI-compatible provider. Requires `AI_BASE_URL`. Keep this secret.                         |
+| `AI_BASE_URL`                   | Optional                                               | Base URL for a custom OpenAI-compatible provider.                                                             |
+| `AI_MODEL`                      | Optional                                               | Model for the custom OpenAI-compatible provider. Defaults to `gpt-4o-mini`.                                   |
 
 Never commit `.env`, service role keys, API keys, or other secrets.
 

@@ -26,10 +26,7 @@ export const Route = createFileRoute("/forum/$topicId")({
   head: ({ params }) => {
     const url = `https://stardust-atlas-explorer.lovable.app/forum/${params.topicId}`;
     return {
-      meta: [
-        { title: `Discussion — Astralis Forum` },
-        { name: "robots", content: "noindex" },
-      ],
+      meta: [{ title: `Discussion — Astralis Forum` }, { name: "robots", content: "noindex" }],
       links: [{ rel: "canonical", href: url }],
     };
   },
@@ -94,27 +91,36 @@ function TopicPage() {
     return (
       <div className="py-12 text-center">
         <h2 className="font-display text-2xl">Topic not found</h2>
-        <Link to="/forum" className="mt-4 inline-block text-accent underline">Back to forum</Link>
+        <Link to="/forum" className="mt-4 inline-block text-accent underline">
+          Back to forum
+        </Link>
       </div>
     );
   }
 
   return (
     <div>
-      <Link to="/forum" className="mb-4 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground">
+      <Link
+        to="/forum"
+        className="mb-4 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"
+      >
         <ArrowLeft className="h-4 w-4" /> All topics
       </Link>
 
       <article className="rounded-2xl border border-border/60 bg-card/60 p-6">
         <div className="mb-2 flex flex-wrap items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-          <span className="rounded-full bg-accent/10 px-2 py-0.5 text-accent">{topic.category}</span>
+          <span className="rounded-full bg-accent/10 px-2 py-0.5 text-accent">
+            {topic.category}
+          </span>
           <span>·</span>
           <span className="text-foreground">@{topic.author}</span>
           <span>·</span>
           <span>{formatRelative(topic.created_at)}</span>
         </div>
         <h2 className="font-display text-2xl font-semibold sm:text-3xl">{topic.title}</h2>
-        <p className="mt-3 whitespace-pre-wrap text-sm leading-relaxed text-foreground/90">{topic.body}</p>
+        <p className="mt-3 whitespace-pre-wrap text-sm leading-relaxed text-foreground/90">
+          {topic.body}
+        </p>
       </article>
 
       <section className="mt-8">
@@ -129,7 +135,9 @@ function TopicPage() {
                 <span>·</span>
                 <span>{formatRelative(r.created_at)}</span>
               </div>
-              <p className="whitespace-pre-wrap text-sm leading-relaxed text-foreground/90">{r.body}</p>
+              <p className="whitespace-pre-wrap text-sm leading-relaxed text-foreground/90">
+                {r.body}
+              </p>
             </li>
           ))}
           {replies.length === 0 && (
@@ -141,9 +149,13 @@ function TopicPage() {
       </section>
 
       {user ? (
-        <form onSubmit={submit} className="mt-6 grid gap-3 rounded-2xl border border-accent/30 bg-card/70 p-5">
+        <form
+          onSubmit={submit}
+          className="mt-6 grid gap-3 rounded-2xl border border-accent/30 bg-card/70 p-5"
+        >
           <div className="text-xs text-muted-foreground">
-            Replying as <span className="font-medium text-accent">@{profile?.username ?? "you"}</span>
+            Replying as{" "}
+            <span className="font-medium text-accent">@{profile?.username ?? "you"}</span>
           </div>
           <textarea
             value={body}

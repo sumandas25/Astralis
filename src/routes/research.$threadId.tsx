@@ -56,7 +56,13 @@ function ThreadPage() {
 
 const transport = new DefaultChatTransport({ api: "/api/chat" });
 
-function ChatWindow({ threadId, initialMessages }: { threadId: string; initialMessages: UIMessage[] }) {
+function ChatWindow({
+  threadId,
+  initialMessages,
+}: {
+  threadId: string;
+  initialMessages: UIMessage[];
+}) {
   const { messages, sendMessage, status, error } = useChat({
     id: threadId,
     messages: initialMessages,
@@ -108,9 +114,7 @@ function ChatWindow({ threadId, initialMessages }: { threadId: string; initialMe
             />
           ) : (
             messages.map((m) => {
-              const textContent = m.parts
-                .map((p) => (p.type === "text" ? p.text : ""))
-                .join("");
+              const textContent = m.parts.map((p) => (p.type === "text" ? p.text : "")).join("");
               if (m.role === "user") {
                 return (
                   <Message key={m.id} from="user">
@@ -120,7 +124,7 @@ function ChatWindow({ threadId, initialMessages }: { threadId: string; initialMe
               }
               return (
                 <Message key={m.id} from="assistant">
-                  <MessageContent >
+                  <MessageContent>
                     {textContent ? (
                       <MessageResponse>{textContent}</MessageResponse>
                     ) : (
@@ -133,7 +137,7 @@ function ChatWindow({ threadId, initialMessages }: { threadId: string; initialMe
           )}
           {status === "submitted" && (
             <Message from="assistant">
-              <MessageContent >
+              <MessageContent>
                 <Shimmer>Searching the cosmos…</Shimmer>
               </MessageContent>
             </Message>

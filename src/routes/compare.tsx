@@ -21,9 +21,7 @@ export const Route = createFileRoute("/compare")({
       },
       { property: "og:url", content: "https://stardust-atlas-explorer.lovable.app/compare" },
     ],
-    links: [
-      { rel: "canonical", href: "https://stardust-atlas-explorer.lovable.app/compare" },
-    ],
+    links: [{ rel: "canonical", href: "https://stardust-atlas-explorer.lovable.app/compare" }],
   }),
   component: ComparePage,
 });
@@ -62,7 +60,8 @@ function ComparePage() {
           Two worlds, side by side.
         </h1>
         <p className="mt-3 text-sm text-muted-foreground sm:text-base">
-          Pick any two objects in the atlas to compare diameters, distances, mass, temperatures and more.
+          Pick any two objects in the atlas to compare diameters, distances, mass, temperatures and
+          more.
         </p>
       </header>
 
@@ -180,7 +179,11 @@ function StatGrid({ left, right }: { left: CelestialBody; right: CelestialBody }
     const out: { label: string; a?: string; b?: string }[] = [];
     for (const s of left.stats) {
       seen.add(s.label);
-      out.push({ label: s.label, a: s.value, b: right.stats.find((r) => r.label === s.label)?.value });
+      out.push({
+        label: s.label,
+        a: s.value,
+        b: right.stats.find((r) => r.label === s.label)?.value,
+      });
     }
     for (const s of right.stats) {
       if (seen.has(s.label)) continue;
@@ -202,7 +205,9 @@ function StatGrid({ left, right }: { left: CelestialBody; right: CelestialBody }
             key={r.label}
             className="grid grid-cols-1 gap-1 px-5 py-4 sm:grid-cols-[1fr_1.2fr_1.2fr] sm:gap-3"
           >
-            <span className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground">{r.label}</span>
+            <span className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
+              {r.label}
+            </span>
             <span className="font-display text-base">
               <span className="text-muted-foreground sm:hidden">{left.name}: </span>
               {r.a ?? <Missing />}

@@ -1,16 +1,37 @@
-import { createFileRoute, Link, Outlet, useNavigate, useParams, useRouter, useRouterState } from "@tanstack/react-router";
+import {
+  createFileRoute,
+  Link,
+  Outlet,
+  useNavigate,
+  useParams,
+  useRouter,
+  useRouterState,
+} from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 import { Plus, Trash2, MessageSquare, Telescope } from "lucide-react";
-import { createThreadId, loadThreads, saveThreads, type ResearchThread } from "@/lib/research-storage";
+import {
+  createThreadId,
+  loadThreads,
+  saveThreads,
+  type ResearchThread,
+} from "@/lib/research-storage";
 import researchBot from "@/assets/research-bot.png";
 
 export const Route = createFileRoute("/research")({
   head: () => ({
     meta: [
       { title: "Research Assistant — Astralis" },
-      { name: "description", content: "AI-powered astronomy research chatbot with links to journals, arXiv and NASA ADS publications." },
+      {
+        name: "description",
+        content:
+          "AI-powered astronomy research chatbot with links to journals, arXiv and NASA ADS publications.",
+      },
       { property: "og:title", content: "Research Assistant — Astralis" },
-      { property: "og:description", content: "Chat with an astronomy research AI. Cite arXiv, NASA ADS, and peer-reviewed papers." },
+      {
+        property: "og:description",
+        content:
+          "Chat with an astronomy research AI. Cite arXiv, NASA ADS, and peer-reviewed papers.",
+      },
       { property: "og:url", content: "https://stardust-atlas-explorer.lovable.app/research" },
     ],
   }),
@@ -38,7 +59,12 @@ function ResearchLayout() {
 
   function newThread() {
     const id = createThreadId();
-    const t: ResearchThread = { id, title: "New conversation", updatedAt: Date.now(), messages: [] };
+    const t: ResearchThread = {
+      id,
+      title: "New conversation",
+      updatedAt: Date.now(),
+      messages: [],
+    };
     const next = [t, ...loadThreads()];
     saveThreads(next);
     setThreads(next);
@@ -69,7 +95,9 @@ function ResearchLayout() {
             <img src={researchBot} alt="" width={28} height={28} className="rounded-full" />
             <div className="leading-tight">
               <div className="text-xs font-semibold">Research AI</div>
-              <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Astralis</div>
+              <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
+                Astralis
+              </div>
             </div>
           </div>
 
@@ -80,7 +108,9 @@ function ResearchLayout() {
             <Plus className="h-3.5 w-3.5" /> New conversation
           </button>
 
-          <div className="px-1 text-[10px] uppercase tracking-[0.18em] text-muted-foreground">History</div>
+          <div className="px-1 text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
+            History
+          </div>
           <div className="mt-2 max-h-[60vh] space-y-1 overflow-y-auto pr-1">
             {!hydrated ? null : threads.length === 0 ? (
               <div className="px-2 py-6 text-center text-xs text-muted-foreground">
@@ -139,9 +169,13 @@ function ResearchLayout() {
                 }}
                 className="max-w-[180px] truncate rounded-md border border-border bg-card/60 px-2 py-1 text-xs"
               >
-                <option value="" disabled>Conversations…</option>
+                <option value="" disabled>
+                  Conversations…
+                </option>
                 {threads.map((t) => (
-                  <option key={t.id} value={t.id}>{t.title}</option>
+                  <option key={t.id} value={t.id}>
+                    {t.title}
+                  </option>
                 ))}
               </select>
             )}
@@ -156,9 +190,7 @@ function ResearchLayout() {
 
         <Outlet />
 
-        {!activeId && hydrated && (
-          <EmptyHero onStart={newThread} />
-        )}
+        {!activeId && hydrated && <EmptyHero onStart={newThread} />}
       </div>
     </div>
   );
@@ -192,7 +224,10 @@ function EmptyHero({ onStart }: { onStart: () => void }) {
             "Recent JWST findings on early galaxies",
             "Mechanisms behind fast radio bursts",
           ].map((s) => (
-            <div key={s} className="rounded-xl border border-border/60 bg-background/40 px-3 py-2 text-xs text-muted-foreground">
+            <div
+              key={s}
+              className="rounded-xl border border-border/60 bg-background/40 px-3 py-2 text-xs text-muted-foreground"
+            >
               "{s}"
             </div>
           ))}

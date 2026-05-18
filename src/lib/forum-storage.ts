@@ -51,8 +51,7 @@ function seed(): ForumTopic[] {
     {
       id: uid(),
       title: "Could Europa's subsurface ocean host life?",
-      body:
-        "Galileo and Hubble both suggest a salty ocean beneath Europa's ice. With Europa Clipper en route, what biosignatures are realistically detectable from orbit?",
+      body: "Galileo and Hubble both suggest a salty ocean beneath Europa's ice. With Europa Clipper en route, what biosignatures are realistically detectable from orbit?",
       author: "astro_kai",
       category: "moons",
       createdAt: now - 1000 * 60 * 60 * 30,
@@ -60,8 +59,7 @@ function seed(): ForumTopic[] {
         {
           id: uid(),
           author: "plume_hunter",
-          body:
-            "Methane:ethane ratios in plumes would be the cleanest tell, but Clipper's MASPEX needs a flyby through an active vent.",
+          body: "Methane:ethane ratios in plumes would be the cleanest tell, but Clipper's MASPEX needs a flyby through an active vent.",
           createdAt: now - 1000 * 60 * 60 * 12,
         },
       ],
@@ -69,8 +67,7 @@ function seed(): ForumTopic[] {
     {
       id: uid(),
       title: "Is TON 618 really the largest known black hole?",
-      body:
-        "Mass estimates from C IV broad-line widths are notoriously uncertain. What's the modern consensus on ultramassive SMBH catalogs?",
+      body: "Mass estimates from C IV broad-line widths are notoriously uncertain. What's the modern consensus on ultramassive SMBH catalogs?",
       author: "eventhorizon",
       category: "black-holes",
       createdAt: now - 1000 * 60 * 60 * 80,
@@ -79,8 +76,7 @@ function seed(): ForumTopic[] {
     {
       id: uid(),
       title: "Upcoming Chinese & Indian lunar missions — what to watch",
-      body:
-        "Chang'e 7 + Chandrayaan-4 sample return are both queued for the late 2020s. Share your favorite primary-source links and launch trackers.",
+      body: "Chang'e 7 + Chandrayaan-4 sample return are both queued for the late 2020s. Share your favorite primary-source links and launch trackers.",
       author: "rocket_diary",
       category: "missions",
       createdAt: now - 1000 * 60 * 60 * 4,
@@ -120,7 +116,10 @@ export function createTopic(input: {
   return topic;
 }
 
-export function addReply(topicId: string, input: { author: string; body: string }): ForumTopic | undefined {
+export function addReply(
+  topicId: string,
+  input: { author: string; body: string },
+): ForumTopic | undefined {
   const all = read();
   const t = all.find((x) => x.id === topicId);
   if (!t) return undefined;

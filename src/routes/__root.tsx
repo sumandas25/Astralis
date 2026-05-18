@@ -74,17 +74,37 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Astralis — An Interactive Cosmic Atlas" },
-      { name: "description", content: "Explore planets, moons, stars, galaxies, black holes, nebulae and meteors with high-resolution NASA imagery and interesting facts." },
+      {
+        name: "description",
+        content:
+          "Explore planets, moons, stars, galaxies, black holes, nebulae and meteors with high-resolution NASA imagery and interesting facts.",
+      },
       { name: "author", content: "Astralis" },
       { property: "og:title", content: "Astralis — An Interactive Cosmic Atlas" },
-      { property: "og:description", content: "Explore planets, moons, stars, galaxies, black holes, nebulae and meteors with high-resolution NASA imagery and interesting facts." },
+      {
+        property: "og:description",
+        content:
+          "Explore planets, moons, stars, galaxies, black holes, nebulae and meteors with high-resolution NASA imagery and interesting facts.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
       { name: "twitter:title", content: "Astralis — An Interactive Cosmic Atlas" },
-      { name: "twitter:description", content: "Explore planets, moons, stars, galaxies, black holes, nebulae and meteors with high-resolution NASA imagery and interesting facts." },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/4dHeSXU0Gnai8Fnh5Peg2cSOby43/social-images/social-1779112439192-WhatsApp_Image_2026-05-18_at_7.24.06_PM.webp" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/4dHeSXU0Gnai8Fnh5Peg2cSOby43/social-images/social-1779112439192-WhatsApp_Image_2026-05-18_at_7.24.06_PM.webp" },
+      {
+        name: "twitter:description",
+        content:
+          "Explore planets, moons, stars, galaxies, black holes, nebulae and meteors with high-resolution NASA imagery and interesting facts.",
+      },
+      {
+        property: "og:image",
+        content:
+          "https://storage.googleapis.com/gpt-engineer-file-uploads/4dHeSXU0Gnai8Fnh5Peg2cSOby43/social-images/social-1779112439192-WhatsApp_Image_2026-05-18_at_7.24.06_PM.webp",
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://storage.googleapis.com/gpt-engineer-file-uploads/4dHeSXU0Gnai8Fnh5Peg2cSOby43/social-images/social-1779112439192-WhatsApp_Image_2026-05-18_at_7.24.06_PM.webp",
+      },
     ],
     links: [
       {

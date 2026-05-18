@@ -54,7 +54,8 @@ export const bodies: CelestialBody[] = [
     tagline: "Our local G-type main sequence star",
     description:
       "The Sun is a 4.6-billion-year-old yellow dwarf star at the center of our solar system. It holds 99.86% of the system's mass and fuses 600 million tons of hydrogen into helium every second.",
-    image: "https://upload.wikimedia.org/wikipedia/commons/b/b4/The_Sun_by_the_Atmospheric_Imaging_Assembly_of_NASA%27s_Solar_Dynamics_Observatory_-_20100819.jpg",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/b/b4/The_Sun_by_the_Atmospheric_Imaging_Assembly_of_NASA%27s_Solar_Dynamics_Observatory_-_20100819.jpg",
     imageCredit: "NASA / SDO",
     color: "oklch(0.85 0.18 80)",
     stats: [
@@ -174,7 +175,8 @@ export const bodies: CelestialBody[] = [
     tagline: "King of the planets",
     description:
       "A gas giant so massive it could swallow all other planets combined. Jupiter's Great Red Spot is a storm wider than Earth that has raged for centuries.",
-    image: "https://upload.wikimedia.org/wikipedia/commons/2/2b/Jupiter_and_its_shrunken_Great_Red_Spot.jpg",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/2/2b/Jupiter_and_its_shrunken_Great_Red_Spot.jpg",
     imageCredit: "NASA / Hubble",
     color: "oklch(0.65 0.12 60)",
     stats: [
@@ -437,7 +439,8 @@ export const bodies: CelestialBody[] = [
     tagline: "Our galactic twin, closing in",
     description:
       "The nearest major spiral galaxy, 2.5 million light-years away. It's heading toward us at 110 km/s and will eventually merge with the Milky Way.",
-    image: "https://upload.wikimedia.org/wikipedia/commons/9/98/Andromeda_Galaxy_%28with_h-alpha%29.jpg",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/9/98/Andromeda_Galaxy_%28with_h-alpha%29.jpg",
     imageCredit: "Adam Evans",
     color: "oklch(0.7 0.12 290)",
     stats: [
@@ -505,7 +508,8 @@ export const bodies: CelestialBody[] = [
     tagline: "The first black hole ever photographed",
     description:
       "A monstrous 6.5 billion solar-mass black hole in galaxy M87. Its first image, released in 2019, showed the shadow predicted by Einstein a century earlier.",
-    image: "https://upload.wikimedia.org/wikipedia/commons/4/4f/Black_hole_-_Messier_87_crop_max_res.jpg",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/4/4f/Black_hole_-_Messier_87_crop_max_res.jpg",
     imageCredit: "EHT Collaboration",
     color: "oklch(0.7 0.2 50)",
     stats: [
@@ -550,7 +554,8 @@ export const bodies: CelestialBody[] = [
     tagline: "A stellar nursery in Orion's sword",
     description:
       "One of the brightest nebulae in the sky, M42 is a vast cloud of gas and dust where new stars are being born right now, only 1,344 light-years away.",
-    image: "https://upload.wikimedia.org/wikipedia/commons/f/f3/Orion_Nebula_-_Hubble_2006_mosaic_18000.jpg",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/f/f3/Orion_Nebula_-_Hubble_2006_mosaic_18000.jpg",
     imageCredit: "NASA / ESA / Hubble",
     color: "oklch(0.65 0.2 25)",
     stats: [
@@ -572,7 +577,8 @@ export const bodies: CelestialBody[] = [
     tagline: "Hubble's most iconic image",
     description:
       "Towering columns of cold gas and dust in the Eagle Nebula (M16), being slowly eroded by ultraviolet light from nearby young stars.",
-    image: "https://upload.wikimedia.org/wikipedia/commons/6/68/Pillars_of_creation_2014_HST_WFC3-UVIS_full-res_denoised.jpg",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/6/68/Pillars_of_creation_2014_HST_WFC3-UVIS_full-res_denoised.jpg",
     imageCredit: "NASA / ESA / Hubble",
     color: "oklch(0.6 0.18 50)",
     stats: [
@@ -707,7 +713,8 @@ export const bodies: CelestialBody[] = [
       classification: "Dwarf planet, Kuiper Belt Object",
       discovery: "Discovered by Clyde Tombaugh in 1930 at Lowell Observatory.",
       nameOrigin: "Named by 11-year-old Venetia Burney after the Roman god of the underworld.",
-      composition: "Rocky core surrounded by a thick mantle of water ice and a nitrogen-methane surface.",
+      composition:
+        "Rocky core surrounded by a thick mantle of water ice and a nitrogen-methane surface.",
       notableMissions: ["New Horizons (2015 flyby)"],
     },
   },
@@ -735,7 +742,8 @@ export const bodies: CelestialBody[] = [
       "Likely has a layer of briny water beneath its surface.",
     ],
     extras: {
-      discovery: "Found by Giuseppe Piazzi — originally classified as a planet for 50 years before being demoted to asteroid, then promoted to dwarf planet.",
+      discovery:
+        "Found by Giuseppe Piazzi — originally classified as a planet for 50 years before being demoted to asteroid, then promoted to dwarf planet.",
       nameOrigin: "Named after the Roman goddess of agriculture.",
       notableMissions: ["Dawn (2015–2018 orbital survey)"],
     },
@@ -767,7 +775,8 @@ export const bodies: CelestialBody[] = [
     ],
     extras: {
       discovery: "Discovered by Galileo Galilei in 1610 — one of the four Galilean moons.",
-      composition: "Silicate rock with an iron-sulfide core and crust coated in sulfur and SO₂ frost.",
+      composition:
+        "Silicate rock with an iron-sulfide core and crust coated in sulfur and SO₂ frost.",
       notableMissions: ["Voyager 1/2", "Galileo", "Juno (recent close flybys)"],
     },
   },
@@ -864,8 +873,7 @@ export const bodies: CelestialBody[] = [
     tagline: "One of the largest stars known",
     description:
       "A red hypergiant so vast that if placed in our solar system, its surface would extend beyond the orbit of Jupiter. It's shedding mass at a furious rate and will end in a supernova or hypernova.",
-    image:
-      "https://commons.wikimedia.org/wiki/Special:FilePath/VY_Canis_Majoris.jpg",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/VY_Canis_Majoris.jpg",
     imageCredit: "NASA / ESA / Hubble",
     color: "oklch(0.55 0.18 25)",
     stats: [
@@ -914,8 +922,7 @@ export const bodies: CelestialBody[] = [
     tagline: "A textbook barred spiral",
     description:
       "Located in Eridanus, NGC 1300 is one of the most photographed barred spiral galaxies — its perfectly defined bar and grand spiral arms are a benchmark for galactic morphology studies.",
-    image:
-      "https://commons.wikimedia.org/wiki/Special:FilePath/NGC1300.jpg",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/NGC1300.jpg",
     imageCredit: "NASA / ESA / Hubble",
     color: "oklch(0.7 0.12 260)",
     stats: [
@@ -937,8 +944,7 @@ export const bodies: CelestialBody[] = [
     tagline: "One of the most massive black holes known",
     description:
       "An ultramassive black hole at the heart of a hyperluminous quasar — its mass is 66 billion Suns. The brilliant quasar it powers shines from 18.2 billion light-years away.",
-    image:
-      "https://commons.wikimedia.org/wiki/Special:FilePath/TON_618_SDSS9_version_2.jpg",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/TON_618_SDSS9_version_2.jpg",
     imageCredit: "Survey image / public domain",
     color: "oklch(0.6 0.18 40)",
     stats: [
@@ -960,8 +966,7 @@ export const bodies: CelestialBody[] = [
     tagline: "The first confirmed black hole",
     description:
       "Discovered as an intense X-ray source in 1964, Cygnus X-1 is a stellar-mass black hole greedily devouring its blue supergiant companion. Its 1974 confirmation settled a famous bet between Stephen Hawking and Kip Thorne.",
-    image:
-      "https://commons.wikimedia.org/wiki/Special:FilePath/Cygnus_X-1.jpg",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Cygnus_X-1.jpg",
     imageCredit: "Optical / DSS",
     color: "oklch(0.55 0.2 240)",
     stats: [
@@ -985,8 +990,7 @@ export const bodies: CelestialBody[] = [
     tagline: "JWST's first showcase",
     description:
       "A vast star-forming complex in the southern sky containing some of the most luminous stars known, including the unstable Eta Carinae. JWST's first 'Cosmic Cliffs' image revealed pillars of newborn stars in stunning detail.",
-    image:
-      "https://cdn.esawebb.org/archives/images/screen/weic2205b.jpg",
+    image: "https://cdn.esawebb.org/archives/images/screen/weic2205b.jpg",
     imageCredit: "NASA / ESA / CSA / STScI / JWST",
     color: "oklch(0.7 0.18 25)",
     stats: [
@@ -1060,8 +1064,7 @@ export const bodies: CelestialBody[] = [
     tagline: "The second interstellar visitor",
     description:
       "Discovered in 2019 by amateur astronomer Gennadiy Borisov, this was the first confirmed interstellar comet — clearly displaying a tail and coma like a familiar comet, but from another star system.",
-    image:
-      "https://commons.wikimedia.org/wiki/Special:FilePath/Borisov_Hubble_first_image.png",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Borisov_Hubble_first_image.png",
     imageCredit: "NASA / ESA / Hubble",
     color: "oklch(0.75 0.1 200)",
     stats: [

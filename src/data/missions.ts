@@ -50,8 +50,7 @@ export const missions: Mission[] = [
       "Artemis III will land the first woman on the Moon",
       "Lunar Gateway space station planned",
     ],
-    image:
-      "https://commons.wikimedia.org/wiki/Special:FilePath/Artemis_I_Launch.jpg",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Artemis_I_Launch.jpg",
   },
   {
     id: "chandrayaan-3",
@@ -183,8 +182,7 @@ export const missions: Mission[] = [
       "7 onboard instruments for solar imaging & particles",
       "Captured first images of a major solar flare",
     ],
-    image:
-      "https://commons.wikimedia.org/wiki/Special:FilePath/PSLV-XL_(C57)_Aditya-L1_ISRO.jpg",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/PSLV-XL_(C57)_Aditya-L1_ISRO.jpg",
   },
   {
     id: "chang-e-6",
@@ -278,8 +276,7 @@ export const missions: Mission[] = [
       "Continuously crewed since June 2022",
       "Hosts the Chinese Space Station Telescope (Xuntian) — coming 2026",
     ],
-    image:
-      "https://commons.wikimedia.org/wiki/Special:FilePath/Chinese_Tiangong_Space_Station.jpg",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Chinese_Tiangong_Space_Station.jpg",
   },
   {
     id: "mars-sample-return",
@@ -316,8 +313,7 @@ export const missions: Mission[] = [
       "Will explore dozens of sites across Titan",
       "Arrives at Titan in 2034",
     ],
-    image:
-      "https://commons.wikimedia.org/wiki/Special:FilePath/Dragonfly-landing.png",
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Dragonfly-landing.png",
   },
 ];
 

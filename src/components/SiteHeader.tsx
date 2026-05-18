@@ -1,5 +1,19 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { Menu, Telescope, X, Rocket, Sparkles, GitCompareArrows, MessagesSquare, LogIn, LogOut, User as UserIcon, ChevronDown, Compass, Users } from "lucide-react";
+import {
+  Menu,
+  Telescope,
+  X,
+  Rocket,
+  Sparkles,
+  GitCompareArrows,
+  MessagesSquare,
+  LogIn,
+  LogOut,
+  User as UserIcon,
+  ChevronDown,
+  Compass,
+  Users,
+} from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { categories } from "@/data/cosmos";
 import { useAuth, signOut } from "@/lib/use-auth";
@@ -11,11 +25,16 @@ export function SiteHeader() {
   const menuRef = useRef<HTMLDivElement | null>(null);
   const { user, profile } = useAuth();
 
-  useEffect(() => { setOpen(false); setMenu(null); }, [pathname]);
+  useEffect(() => {
+    setOpen(false);
+    setMenu(null);
+  }, [pathname]);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [open]);
 
   useEffect(() => {
@@ -36,7 +55,8 @@ export function SiteHeader() {
   }, [menu]);
 
   const exploreActive = pathname.startsWith("/category/");
-  const communityActive = pathname === "/compare" || pathname.startsWith("/forum") || pathname === "/missions";
+  const communityActive =
+    pathname === "/compare" || pathname.startsWith("/forum") || pathname === "/missions";
 
   return (
     <header className="sticky top-0 z-40 border-b border-border/40 bg-background/70 backdrop-blur-xl">
@@ -47,7 +67,9 @@ export function SiteHeader() {
           </div>
           <div className="flex flex-col leading-none">
             <span className="font-display text-base font-semibold tracking-tight">Astralis</span>
-            <span className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">Cosmic Atlas</span>
+            <span className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+              Cosmic Atlas
+            </span>
           </div>
         </Link>
 
@@ -67,7 +89,11 @@ export function SiteHeader() {
               aria-expanded={menu === "explore"}
             >
               <Compass className="h-3.5 w-3.5" /> Explore
-              <ChevronDown className={"h-3.5 w-3.5 transition-transform " + (menu === "explore" ? "rotate-180" : "")} />
+              <ChevronDown
+                className={
+                  "h-3.5 w-3.5 transition-transform " + (menu === "explore" ? "rotate-180" : "")
+                }
+              />
             </button>
             {menu === "explore" && (
               <div
@@ -117,32 +143,60 @@ export function SiteHeader() {
               aria-expanded={menu === "community"}
             >
               <Users className="h-3.5 w-3.5" /> Community
-              <ChevronDown className={"h-3.5 w-3.5 transition-transform " + (menu === "community" ? "rotate-180" : "")} />
+              <ChevronDown
+                className={
+                  "h-3.5 w-3.5 transition-transform " + (menu === "community" ? "rotate-180" : "")
+                }
+              />
             </button>
             {menu === "community" && (
               <div
                 role="menu"
                 className="absolute left-0 top-full z-50 mt-2 w-64 overflow-hidden rounded-2xl border border-border/60 bg-background/95 p-2 shadow-2xl backdrop-blur-xl animate-in fade-in slide-in-from-top-2 duration-150"
               >
-                <Link to="/compare" className={"flex items-start gap-3 rounded-xl px-3 py-2.5 text-sm transition-colors " + (pathname === "/compare" ? "bg-primary/15" : "hover:bg-muted")}>
+                <Link
+                  to="/compare"
+                  className={
+                    "flex items-start gap-3 rounded-xl px-3 py-2.5 text-sm transition-colors " +
+                    (pathname === "/compare" ? "bg-primary/15" : "hover:bg-muted")
+                  }
+                >
                   <GitCompareArrows className="mt-0.5 h-4 w-4 text-accent" />
                   <span>
                     <span className="block font-medium leading-tight">Compare bodies</span>
-                    <span className="block text-xs text-muted-foreground">Stack any two celestial objects side-by-side.</span>
+                    <span className="block text-xs text-muted-foreground">
+                      Stack any two celestial objects side-by-side.
+                    </span>
                   </span>
                 </Link>
-                <Link to="/forum" className={"flex items-start gap-3 rounded-xl px-3 py-2.5 text-sm transition-colors " + (pathname.startsWith("/forum") ? "bg-primary/15" : "hover:bg-muted")}>
+                <Link
+                  to="/forum"
+                  className={
+                    "flex items-start gap-3 rounded-xl px-3 py-2.5 text-sm transition-colors " +
+                    (pathname.startsWith("/forum") ? "bg-primary/15" : "hover:bg-muted")
+                  }
+                >
                   <MessagesSquare className="mt-0.5 h-4 w-4 text-accent" />
                   <span>
                     <span className="block font-medium leading-tight">Forum</span>
-                    <span className="block text-xs text-muted-foreground">Join discussions with fellow explorers.</span>
+                    <span className="block text-xs text-muted-foreground">
+                      Join discussions with fellow explorers.
+                    </span>
                   </span>
                 </Link>
-                <Link to="/missions" className={"flex items-start gap-3 rounded-xl px-3 py-2.5 text-sm transition-colors " + (pathname === "/missions" ? "bg-primary/15" : "hover:bg-muted")}>
+                <Link
+                  to="/missions"
+                  className={
+                    "flex items-start gap-3 rounded-xl px-3 py-2.5 text-sm transition-colors " +
+                    (pathname === "/missions" ? "bg-primary/15" : "hover:bg-muted")
+                  }
+                >
                   <Rocket className="mt-0.5 h-4 w-4 text-accent" />
                   <span>
                     <span className="block font-medium leading-tight">Live missions</span>
-                    <span className="block text-xs text-muted-foreground">Track active space exploration in real time.</span>
+                    <span className="block text-xs text-muted-foreground">
+                      Track active space exploration in real time.
+                    </span>
                   </span>
                 </Link>
               </div>

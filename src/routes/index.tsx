@@ -10,15 +10,21 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Astralis — Explore the Cosmos" },
-      { name: "description", content: "An interactive atlas of planets, stars, galaxies, black holes, nebulae and meteors, plus live space missions." },
+      {
+        name: "description",
+        content:
+          "An interactive atlas of planets, stars, galaxies, black holes, nebulae and meteors, plus live space missions.",
+      },
       { property: "og:title", content: "Astralis — Explore the Cosmos" },
-      { property: "og:description", content: "An interactive atlas of planets, stars, galaxies, black holes, nebulae and meteors, plus live space missions." },
+      {
+        property: "og:description",
+        content:
+          "An interactive atlas of planets, stars, galaxies, black holes, nebulae and meteors, plus live space missions.",
+      },
       { property: "og:url", content: "https://stardust-atlas-explorer.lovable.app/" },
       { property: "og:type", content: "website" },
     ],
-    links: [
-      { rel: "canonical", href: "https://stardust-atlas-explorer.lovable.app/" },
-    ],
+    links: [{ rel: "canonical", href: "https://stardust-atlas-explorer.lovable.app/" }],
   }),
   component: Index,
 });
@@ -42,7 +48,9 @@ function Index() {
     });
   }, [query, filter]);
 
-  const featuredMissions = missions.filter((m) => m.status === "active" || m.status === "cruise").slice(0, 3);
+  const featuredMissions = missions
+    .filter((m) => m.status === "active" || m.status === "cruise")
+    .slice(0, 3);
 
   return (
     <main>
@@ -55,8 +63,7 @@ function Index() {
             An interactive cosmic atlas
           </div>
           <h1 className="font-display text-4xl font-semibold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
-            Wander the universe,{" "}
-            <span className="text-gradient">one world at a time.</span>
+            Wander the universe, <span className="text-gradient">one world at a time.</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-sm text-muted-foreground sm:text-lg">
             From the cliffs of Mars to the event horizon of Sagittarius A*. Explore high-resolution
@@ -112,10 +119,14 @@ function Index() {
       <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6">
         <div className="mb-5 flex items-end justify-between gap-3">
           <div>
-            <div className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">Library</div>
+            <div className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
+              Library
+            </div>
             <h2 className="font-display text-2xl font-semibold sm:text-3xl">The atlas</h2>
           </div>
-          <div className="text-xs text-muted-foreground">{filtered.length} of {bodies.length}</div>
+          <div className="text-xs text-muted-foreground">
+            {filtered.length} of {bodies.length}
+          </div>
         </div>
 
         {/* Filter chips — horizontal scroll on mobile */}
@@ -179,10 +190,18 @@ function Index() {
                 className="group relative flex flex-col overflow-hidden rounded-2xl border border-border/60 bg-background/40 transition-all hover:-translate-y-1 hover:border-accent/50"
               >
                 <div className="relative aspect-[16/10] overflow-hidden">
-                  <SafeImage src={m.image} alt={m.name} targetWidth={500} className="object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <SafeImage
+                    src={m.image}
+                    alt={m.name}
+                    targetWidth={500}
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
                   <div className="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full bg-background/70 px-2.5 py-1 text-[10px] uppercase tracking-[0.15em] backdrop-blur">
-                    <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: statusColor[m.status] }} />
+                    <span
+                      className="h-1.5 w-1.5 rounded-full"
+                      style={{ backgroundColor: statusColor[m.status] }}
+                    />
                     {statusLabel[m.status]}
                   </div>
                 </div>

@@ -50,7 +50,10 @@ function ResetPasswordPage() {
 
   return (
     <main className="mx-auto max-w-md px-4 py-12 sm:px-6">
-      <Link to="/login" className="mb-6 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground">
+      <Link
+        to="/login"
+        className="mb-6 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"
+      >
         <ArrowLeft className="h-4 w-4" /> Back to sign in
       </Link>
       <div className="rounded-2xl border border-border/60 bg-card/60 p-6">
