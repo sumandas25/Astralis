@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://stardust-atlas-explorer.lovable.app/sitemap.xml

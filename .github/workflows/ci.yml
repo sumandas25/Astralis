@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      NODE_OPTIONS: --max-old-space-size=4096
+      VITE_SUPABASE_PROJECT_ID: example-project
+      VITE_SUPABASE_URL: https://example-project.supabase.co
+      VITE_SUPABASE_PUBLISHABLE_KEY: example-publishable-key
+      SUPABASE_URL: https://example-project.supabase.co
+      SUPABASE_PUBLISHABLE_KEY: example-publishable-key
+      SUPABASE_SERVICE_ROLE_KEY: example-service-role-key
+      LOVABLE_API_KEY: example-lovable-api-key
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build

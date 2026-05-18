@@ -1,0 +1,23 @@
+# Astralis
+
+> An interactive cosmic atlas for researchers, students and the curious — explore planets, moons, stars, galaxies, black holes, nebulae and meteors with NASA-grade imagery, deep-dive data, mission tracking, comparisons and an AI research assistant that cites peer-reviewed sources.
+
+Astralis is a free, browser-based reference for astronomy. It catalogues celestial bodies, tracks current and upcoming space missions worldwide, lets users compare bodies side-by-side, and includes a community forum and AI research assistant that links out to arXiv, NASA ADS and journal publications.
+
+## Pages
+
+- [Home](/): Browse and search the full atlas of celestial bodies and featured missions.
+- [Compare](/compare): Place any two celestial bodies side by side and compare their vital statistics.
+- [Missions](/missions): Live and upcoming space missions, organised by country and status.
+- [Research](/research): AI research assistant for astronomy questions with peer-reviewed citations.
+- [Forum](/forum): Community discussions on astronomy, missions and research papers.
+
+## Categories
+
+- [Planets](/category/planets): Worlds orbiting our Sun.
+- [Moons](/category/moons): Natural satellites of strange beauty.
+- [Stars](/category/stars): From red dwarfs to hypergiants.
+- [Galaxies](/category/galaxies): Island universes of stars.
+- [Black Holes](/category/black-holes): Gravity beyond escape.
+- [Nebulae](/category/nebulae): Stellar nurseries and graveyards.
+- [Meteors](/category/meteors): Wanderers and impactors.
