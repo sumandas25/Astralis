@@ -2,6 +2,12 @@
 
 Astralis is an interactive astronomy encyclopedia and cosmic atlas. It brings together concise facts, vivid imagery, search, filters, comparison tools, mission tracking, community pages, and a Research AI experience for exploring planets, stars, galaxies, black holes, nebulae, meteors, and active space missions.
 
+## Live Demo
+
+Astralis is deployed on Vercel:
+
+[https://astralis-ten.vercel.app/](https://astralis-ten.vercel.app/)
+
 ## Features
 
 - Browse a curated atlas of astronomical bodies and phenomena.
