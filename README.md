@@ -8,6 +8,16 @@ Astralis is deployed on Vercel:
 
 [https://astralis-ten.vercel.app/](https://astralis-ten.vercel.app/)
 
+## Live Environments
+
+| Environment         | Branch             | URL                                                                                                                            |
+| ------------------- | ------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
+| Production          | `main`             | [https://astralis-ten.vercel.app/](https://astralis-ten.vercel.app/)                                                           |
+| Development Preview | `develop`          | [https://astralis-git-develop-sumandas25s-projects.vercel.app/](https://astralis-git-develop-sumandas25s-projects.vercel.app/) |
+| Feature Preview     | Contributor branch | Vercel creates a unique preview URL for each pushed feature branch.                                                            |
+
+See [docs/environments.md](docs/environments.md) for the branch and preview workflow.
+
 ## Features
 
 - Browse a curated atlas of astronomical bodies and phenomena.

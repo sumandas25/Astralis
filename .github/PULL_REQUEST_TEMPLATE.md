@@ -15,6 +15,16 @@ Describe what this pull request changes.
 - [ ] I ran `npm run lint`
 - [ ] I ran `npm run build`
 - [ ] I tested the changed route or workflow locally
+- [ ] This PR targets `develop`, not `main`
+- [ ] I added the Vercel feature preview URL below when available
+
+## Preview URL
+
+Feature branch preview:
+
+```text
+Paste the Vercel preview URL here
+```
 
 ## Notes
 

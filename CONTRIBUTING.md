@@ -21,6 +21,26 @@ npm run dev
 
 Fill in the required Supabase values in `.env`. Do not commit secrets.
 
+## Branch and Preview Workflow
+
+Astralis uses `main` for production and `develop` for shared development.
+
+| Branch type                    | Purpose                                                  | Deployment                                                      |
+| ------------------------------ | -------------------------------------------------------- | --------------------------------------------------------------- |
+| `main`                         | Stable production code                                   | https://astralis-ten.vercel.app/                                |
+| `develop`                      | Reviewed changes waiting for the next production release | https://astralis-git-develop-sumandas25s-projects.vercel.app/   |
+| `feature/*`, `fix/*`, `docs/*` | Contributor work branches                                | Vercel creates a unique preview URL after the branch is pushed. |
+
+Create contribution branches from `develop`:
+
+```bash
+git checkout develop
+git pull origin develop
+git checkout -b feature/short-description
+```
+
+Open pull requests back into `develop`, not `main`. After a feature branch is pushed, copy the Vercel preview URL from the Vercel deployment or GitHub checks and include it in the pull request.
+
 ## Pull Request Checklist
 
 - Keep changes focused on one topic.
@@ -28,6 +48,7 @@ Fill in the required Supabase values in `.env`. Do not commit secrets.
 - Run `npm run lint` before submitting when possible.
 - Run `npm run build` for UI, routing, or data changes when possible.
 - Add screenshots for visual changes.
+- Include the Vercel preview URL for your feature branch when available.
 - Explain any environment or migration requirements.
 
 ## Data Guidelines
