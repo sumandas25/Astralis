@@ -105,6 +105,24 @@ To test the Vercel build locally on Windows:
 set VERCEL=1&& set NODE_OPTIONS=--max-old-space-size=4096&& npm.cmd run build
 ```
 
+### Supabase Google Sign-In
+
+Google sign-in uses Supabase OAuth. In Supabase, enable the Google provider and configure Auth URL settings before using it in production.
+
+Recommended Supabase Auth URL settings:
+
+| Setting            | Value                                |
+| ------------------ | ------------------------------------ |
+| Site URL           | `https://astralis-ten.vercel.app`    |
+| Redirect URL       | `https://astralis-ten.vercel.app/**` |
+| Local redirect URL | `http://localhost:8080/**`           |
+
+In Google Cloud, add the callback URL shown by Supabase for the Google provider, usually:
+
+```text
+https://<your-project-ref>.supabase.co/auth/v1/callback
+```
+
 ### Lint and Format
 
 ```bash

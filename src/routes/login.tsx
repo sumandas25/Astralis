@@ -2,7 +2,6 @@ import { createFileRoute, Link, useNavigate, useRouter } from "@tanstack/react-r
 import { useEffect, useState } from "react";
 import { ArrowLeft, LogIn, UserPlus } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
-import { lovable } from "@/integrations/lovable";
 import { useAuth } from "@/lib/use-auth";
 
 export const Route = createFileRoute("/login")({
@@ -105,10 +104,18 @@ function LoginPage() {
 
   async function google() {
     setErr(null);
-    const result = await lovable.auth.signInWithOAuth("google", {
-      redirect_uri: `${window.location.origin}/forum`,
+    setInfo(null);
+    setBusy(true);
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: "google",
+      options: {
+        redirectTo: `${window.location.origin}/forum`,
+      },
     });
-    if (result.error) setErr(result.error.message);
+    if (error) {
+      setBusy(false);
+      setErr(error.message);
+    }
   }
 
   return (
@@ -139,7 +146,9 @@ function LoginPage() {
         {mode !== "forgot" && (
           <>
             <button
+              type="button"
               onClick={google}
+              disabled={busy}
               className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-border bg-background/60 px-4 py-2.5 text-sm font-medium transition-colors hover:border-accent/60"
             >
               <svg className="h-4 w-4" viewBox="0 0 24 24" aria-hidden>
@@ -148,7 +157,7 @@ function LoginPage() {
                   d="M12 10.2v3.9h5.4c-.2 1.4-1.6 4.1-5.4 4.1-3.3 0-5.9-2.7-5.9-6s2.6-6 5.9-6c1.9 0 3.1.8 3.8 1.5l2.6-2.5C16.7 3.6 14.6 2.6 12 2.6 6.8 2.6 2.6 6.8 2.6 12s4.2 9.4 9.4 9.4c5.4 0 9-3.8 9-9.1 0-.6-.1-1-.2-1.5H12z"
                 />
               </svg>
-              Continue with Google
+              {busy ? "Opening Google..." : "Continue with Google"}
             </button>
 
             <div className="my-5 flex items-center gap-3 text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
