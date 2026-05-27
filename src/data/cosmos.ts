@@ -748,6 +748,97 @@ export const bodies: CelestialBody[] = [
       notableMissions: ["Dawn (2015–2018 orbital survey)"],
     },
   },
+  {
+    id: "eris",
+    name: "Eris",
+    category: "planets",
+    tagline: "The dwarf planet that redefined the solar system",
+    description:
+      "Eris is the most massive known dwarf planet in the solar system — even heavier than Pluto. Its 2005 discovery helped trigger the reclassification that demoted Pluto, and it remains the namesake of the scattered disc population of distant icy bodies.",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Eris_and_dysnomia2.jpg/1024px-Eris_and_dysnomia2.jpg",
+    imageCredit: "NASA / JPL-Caltech",
+    color: "oklch(0.75 0.03 70)",
+    stats: [
+      { label: "Classification", value: "Dwarf Planet" },
+      { label: "Diameter", value: "2,326 km" },
+      { label: "Mass vs Pluto", value: "1.27×" },
+      { label: "Year length", value: "557 Earth years" },
+      { label: "Distance from Sun", value: "68 AU avg" },
+      { label: "Moons", value: "1 (Dysnomia)" },
+    ],
+    facts: [
+      "Its discovery directly led to Pluto's reclassification in 2006.",
+      "Orbits in the scattered disc, far beyond Neptune.",
+      "Surface is likely covered in frozen methane.",
+    ],
+    extras: {
+      discovery: "Discovered in 2005 by Mike Brown and his team at Palomar Observatory.",
+      nameOrigin: "Named after the Greek goddess of discord and strife.",
+      notableMissions: ["None yet — too distant for current spacecraft"],
+    },
+  },
+  {
+    id: "haumea",
+    name: "Haumea",
+    category: "planets",
+    tagline: "The fast-spinning football-shaped dwarf",
+    description:
+      "Haumea is one of the most unusual objects in the solar system. It spins so rapidly — once every 3.9 hours — that it has stretched into an elongated ellipsoid rather than a sphere. It also hosts a faint ring system discovered in 2017.",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Haumea_Hubble.jpg/1024px-Haumea_Hubble.jpg",
+    imageCredit: "NASA / ESA / Hubble",
+    color: "oklch(0.85 0.02 220)",
+    stats: [
+      { label: "Classification", value: "Dwarf Planet" },
+      { label: "Dimensions", value: "2,322 × 1,704 × 1,138 km" },
+      { label: "Day length", value: "3.92 hours" },
+      { label: "Year length", value: "284 Earth years" },
+      { label: "Moons", value: "2 (Hiʻiaka, Namaka)" },
+      { label: "Ring system", value: "Yes (discovered 2017)" },
+    ],
+    facts: [
+      "One of the fastest-rotating large objects known.",
+      "Has a ring — the first discovered around a dwarf planet.",
+      "Its odd shape comes from rotational deformation, not collision.",
+    ],
+    extras: {
+      discovery: "Discovered in 2004 by a team at Sierra Nevada Observatory, Spain.",
+      nameOrigin: "Named after the Hawaiian goddess of childbirth.",
+      composition: "Rocky core with a mantle of crystalline water ice.",
+      notableMissions: ["None yet"],
+    },
+  },
+  {
+    id: "makemake",
+    name: "Makemake",
+    category: "planets",
+    tagline: "The bright dwarf of the Kuiper Belt",
+    description:
+      "Makemake is the second-brightest object in the Kuiper Belt after Pluto. Despite its brightness, it went undetected for decades because its orbit is highly inclined and tilted away from the plane of the solar system.",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Makemake_Hubble.jpg/1024px-Makemake_Hubble.jpg",
+    imageCredit: "NASA / ESA / Hubble",
+    color: "oklch(0.8 0.04 60)",
+    stats: [
+      { label: "Classification", value: "Dwarf Planet" },
+      { label: "Diameter", value: "~1,430 km" },
+      { label: "Year length", value: "306 Earth years" },
+      { label: "Distance from Sun", value: "45.8 AU avg" },
+      { label: "Moons", value: "1 (discovered 2016)" },
+    ],
+    facts: [
+      "Second-brightest Kuiper Belt object after Pluto.",
+      "Has a small moon, discovered in 2016 by Hubble.",
+      "No atmosphere detected — unlike Pluto or Eris.",
+    ],
+    extras: {
+      discovery: "Discovered in 2005 by Mike Brown's team at Palomar Observatory.",
+      nameOrigin: "Named after the Rapa Nui creator deity from Easter Island.",
+      composition: "Frozen methane, ethane, and nitrogen on the surface.",
+      notableMissions: ["None yet"],
+    },
+  },
 
   // ---------- ADDITIONAL MOONS ----------
   {
