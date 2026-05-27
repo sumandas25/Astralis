@@ -275,7 +275,7 @@ export const bodies: CelestialBody[] = [
     description:
       "Born from a collision 4.5 billion years ago, the Moon stabilizes Earth's axis and drives our tides. Its cratered face has barely changed in billions of years.",
     image: "https://upload.wikimedia.org/wikipedia/commons/e/e1/FullMoon2010.jpg",
-    imageCredit: "Gregory H. Revera",
+    imageCredit: "Gregory H. Revera / CC BY-SA 3.0 (Wikimedia Commons)",
     color: "oklch(0.85 0.005 270)",
     stats: [
       { label: "Orbits", value: "Earth" },
@@ -532,7 +532,7 @@ export const bodies: CelestialBody[] = [
     description:
       "A hypothetical region of spacetime that cannot be entered from outside — only matter and light can escape. Allowed by general relativity but never observed.",
     image: "https://upload.wikimedia.org/wikipedia/commons/c/cf/Black_hole_-_Messier_87.jpg",
-    imageCredit: "Conceptual / EHT",
+    imageCredit: "EHT Collaboration (conceptual)",
     color: "oklch(0.95 0.05 270)",
     stats: [
       { label: "Status", value: "Hypothetical" },
@@ -646,7 +646,7 @@ export const bodies: CelestialBody[] = [
     description:
       "A 20-meter asteroid that exploded over Russia in February 2013, releasing 30× the energy of the Hiroshima bomb and injuring 1,500 people from shattered glass.",
     image: "https://commons.wikimedia.org/wiki/Special:FilePath/2013_Chelyabinsk_meteor_trace.jpg",
-    imageCredit: "Aleksandr Ivanov",
+    imageCredit: "Aleksandr Ivanov / CC BY-SA 3.0 (Wikimedia Commons)",
     color: "oklch(0.7 0.2 60)",
     stats: [
       { label: "Date", value: "Feb 15, 2013" },
@@ -945,7 +945,7 @@ export const bodies: CelestialBody[] = [
     description:
       "An ultramassive black hole at the heart of a hyperluminous quasar — its mass is 66 billion Suns. The brilliant quasar it powers shines from 18.2 billion light-years away.",
     image: "https://commons.wikimedia.org/wiki/Special:FilePath/TON_618_SDSS9_version_2.jpg",
-    imageCredit: "Survey image / public domain",
+    imageCredit: "SDSS / public domain",
     color: "oklch(0.6 0.18 40)",
     stats: [
       { label: "Type", value: "Ultramassive Black Hole" },
@@ -967,7 +967,7 @@ export const bodies: CelestialBody[] = [
     description:
       "Discovered as an intense X-ray source in 1964, Cygnus X-1 is a stellar-mass black hole greedily devouring its blue supergiant companion. Its 1974 confirmation settled a famous bet between Stephen Hawking and Kip Thorne.",
     image: "https://commons.wikimedia.org/wiki/Special:FilePath/Cygnus_X-1.jpg",
-    imageCredit: "Optical / DSS",
+    imageCredit: "DSS / public domain",
     color: "oklch(0.55 0.2 240)",
     stats: [
       { label: "Type", value: "Stellar-mass Black Hole" },
